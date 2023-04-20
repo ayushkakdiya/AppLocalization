@@ -10,10 +10,11 @@ import Foundation
 
 extension String {
     func localized(language: String) -> String {
-        let path = Bundle.main.path(forResource: language, ofType: "lproj") {
-            let bundle = Bundle(path: path!)!
+        if let path = Bundle.main.path(forResource: language, ofType: "lproj") {
+            let bundle = Bundle(path: path)!
             return NSLocalizedString(self, bundle: bundle , comment: "")
         }
+        
         return ""
     }
 }

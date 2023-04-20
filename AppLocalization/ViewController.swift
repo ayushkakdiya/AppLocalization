@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var selectedLanguageSegmant: UISegmentedControl!
     @IBOutlet weak var nameLable: UILabel!
     
-    var areLanguage: [language] = [.en, .fi, .hi, .it, .ru]
+//    var areLanguage: [language] = [.en, .fi, .hi, .it, .ru]
     var arrLanguage: [String] = ["fi", "en", "hi", "it", "ru"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func laguageSelactsagmantAction(_ sender: UISegmentedControl) {
-        nameLable.text = "FullNameKey".localize(language: arrLanguage[sender.selectedSegmentIndex])
+        nameLable.text = "FullNameKey".localized(language: arrLanguage[sender.selectedSegmentIndex])
     }
     
 }
